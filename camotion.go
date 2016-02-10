@@ -1,4 +1,4 @@
-// package camotion provides functions for determining if motion
+// Package camotion provides functions for determining if motion
 // occurred between two images
 package camotion
 
@@ -35,7 +35,7 @@ func MotionWithStep(img1, img2 image.Image, minChange, threshold, step int) bool
 			avg2 := average(img2.At(x, y))
 			diff := math.Abs(avg1 - avg2)
 			if diff > float64(threshold) {
-				change += 1
+				change++
 				if change >= mc {
 					return true
 				}
@@ -54,8 +54,9 @@ func Motion(img1, img2 image.Image, minChange, threshold int) bool {
 	return MotionWithStep(img1, img2, minChange, threshold, 1)
 }
 
-// Returns a black and white image where white pixels denote a change
-// between the two images that is greater than the given threshold
+// Blended eturns a black and white image where white pixels denote
+// a change between the two images that is greater than the given
+// threshold
 func Blended(img1, img2 image.Image, threshold int) image.Image {
 	t := float64(threshold)
 
