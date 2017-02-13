@@ -54,7 +54,7 @@ func Motion(img1, img2 image.Image, minChange, threshold int) bool {
 	return MotionWithStep(img1, img2, minChange, threshold, 1)
 }
 
-// Blended eturns a black and white image where white pixels denote
+// Blended returns a black and white image where white pixels denote
 // a change between the two images that is greater than the given
 // threshold
 func Blended(img1, img2 image.Image, threshold int) image.Image {
